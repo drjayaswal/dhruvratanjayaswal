@@ -1,8 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+A modern, responsive portfolio website built with Next.js 16, React 19, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 📧 Contact form with email integration (Resend)
+- 💭 Anonymous message feature
+- 🚀 Optimized for performance
+- 📱 Mobile-friendly
+- ⚡ Built with Next.js App Router
+
+## Tech Stack
+
+- **Framework**: Next.js 16
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
+- **Email Service**: Resend
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ or Bun
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Create a `.env.local` file based on `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Add your environment variables to `.env.local`:
+   - `RESEND_API_KEY`: Your Resend API key
+   - `CONTACT_EMAIL`: Email address for receiving contact form submissions
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +68,66 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build the production application:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the production server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── app/
+│   ├── api/              # API routes
+│   │   ├── contact/      # Contact form endpoint
+│   │   └── anonymous/    # Anonymous message endpoint
+│   ├── components/       # React components
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Home page
+├── public/               # Static assets
+├── .env.local           # Environment variables (not in git)
+├── .env.example         # Environment variables template
+└── vercel.json          # Vercel configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+## Environment Variables
+
+Required environment variables:
+
+- `RESEND_API_KEY` - API key from [Resend](https://resend.com)
+- `CONTACT_EMAIL` - Email address to receive contact form submissions
+
+## Deployment
+
+### Deploy to Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/portfolio)
+
+For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+
+### Quick Deploy Steps:
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Import project in [Vercel Dashboard](https://vercel.com/dashboard)
+3. Add environment variables (`RESEND_API_KEY`, `CONTACT_EMAIL`)
+4. Deploy!
+
+## License
+
+MIT
+
+## Contact
+
+For any questions or feedback, feel free to reach out through the contact form on the website.
