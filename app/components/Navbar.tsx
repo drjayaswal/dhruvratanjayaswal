@@ -36,7 +36,7 @@ export default function Navbar() {
             />
           <div className="flex items-center">
             <a
-              href="/DhruvRatanJayaswal_CV.pdf"
+              href="/DhruvRatanJayaswal_CV.png"
               download
                 className={`px-6 py-3 text-2xl text-black transition-all duration-300 relative group font-bold ${
                   mounted ? "animate-fade-in-down" : "opacity-0"

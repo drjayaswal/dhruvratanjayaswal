@@ -56,7 +56,7 @@ export default function Footer() {
             <button
               type="submit"
               disabled={status === "sending" || !message.trim()}
-              className="cursor-pointer -ml-8 sm:-ml-10 p-2 bg-cyan-700 hover:bg-cyan-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="cursor-pointer p-2 bg-cyan-700 hover:bg-cyan-600 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               {status === "sending" ? (
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" fill="none" viewBox="0 0 24 24">
