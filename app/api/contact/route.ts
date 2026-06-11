@@ -11,9 +11,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Using Resend API
     const resendApiKey = process.env.RESEND_API_KEY;
-    
+
     if (!resendApiKey) {
       console.error("RESEND_API_KEY is not set");
       return NextResponse.json(
@@ -34,42 +33,51 @@ export async function POST(request: Request) {
         subject: `New Contact Form Message from ${name}`,
         html: `
           <!DOCTYPE html>
-          <html>
-          <head>
-            <style>
-              body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-              .header { background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-              .content { background-color: #ffffff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
-              .field { margin-bottom: 15px; }
-              .label { font-weight: bold; color: #495057; margin-bottom: 5px; display: block; }
-              .value { background-color: #f8f9fa; padding: 10px; border-radius: 4px; border-left: 4px solid #007bff; }
-              .message-content { white-space: pre-wrap; word-wrap: break-word; }
-              .footer { margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef; font-size: 12px; color: #6c757d; }
-            </style>
-          </head>
-          <body>
-            <div class="header">
-              <h2 style="margin: 0; color: #007bff;">📧 New Contact Form Submission</h2>
-            </div>
-            <div class="content">
-              <div class="field">
-                <span class="label">👤 Name:</span>
-                <div class="value">${name}</div>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background-color:#0B2D72;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0B2D72;">
+    <tr>
+      <td align="center" style="background-color:#0B2D72;padding:20px;">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;font-family:Arial,sans-serif;line-height:1.6;color:#ffffff;background-color:#0B2D72;">
+
+          <tr>
+            <td style="padding:24px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:24px;">
+              <h2 style="margin:0;color:#ffffff;font-size:20px;font-weight:600;letter-spacing:0.01em;">New Message from Portfolio</h2>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top:24px;">
+
+              <div style="margin-bottom:20px;">
+                <span style="font-weight:600;color:rgba(255,255,255,0.5);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;display:block;">Name</span>
+                <div style="color:#ffffff;padding:12px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background-color:rgba(255,255,255,0.06);">${name}</div>
               </div>
-              <div class="field">
-                <span class="label">✉️ Email:</span>
-                <div class="value">${email}</div>
+
+              <div style="margin-bottom:20px;">
+                <span style="font-weight:600;color:rgba(255,255,255,0.5);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;display:block;">Email</span>
+                <div style="color:#ffffff;padding:12px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background-color:rgba(255,255,255,0.06);">${email}</div>
               </div>
-              <div class="field">
-                <span class="label">💬 Message:</span>
-                <div class="value message-content">${message}</div>
+
+              <div style="margin-bottom:20px;">
+                <span style="font-weight:600;color:rgba(255,255,255,0.5);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;display:block;">Message</span>
+                <div style="color:#ffffff;padding:12px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background-color:rgba(255,255,255,0.06);white-space:pre-wrap;word-wrap:break-word;line-height:1.7;">${message}</div>
               </div>
-            </div>
-            <div class="footer">
-              <p>This message was sent from your website contact form on ${new Date().toLocaleString()}.</p>
-            </div>
-          </body>
-          </html>
+
+              <div style="margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.12);font-size:12px;color:rgba(255,255,255,0.35);">
+                <p style="margin:0;">Submitted via contact form · ${new Date().toLocaleString()}</p>
+              </div>
+
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
         `,
       }),
     });
