@@ -35,8 +35,8 @@ export default function Connect() {
     }
   };
   return (
-    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72] overflow-hidden">
-      <main className="flex flex-1 flex-col lg:flex-row items-center justify-center overflow-hidden w-full px-8 lg:px-16 py-6 gap-8">
+    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72]">
+      <main className="flex flex-1 flex-col lg:flex-row items-center justify-center w-full px-8 lg:px-16 py-6 gap-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}

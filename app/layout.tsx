@@ -52,11 +52,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="h-screen w-screen overflow-hidden">
+    <html lang="en" suppressHydrationWarning className="min-h-screen w-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen overflow-hidden flex flex-col bg-[#0B2D72] text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full flex flex-col bg-[#0B2D72] text-white`}
       >
-        <main className="flex-1 flex flex-col overflow-hidden relative">
+        <main className="flex-1 flex flex-col relative">
           {children}
         </main>
         <Footer />

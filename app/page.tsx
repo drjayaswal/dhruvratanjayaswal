@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72] overflow-hidden">
+    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72]">
       <section className="flex flex-col justify-center px-8 lg:px-16 w-full py-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

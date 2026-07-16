@@ -110,7 +110,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="relative select-none flex-1 flex flex-col bg-[#0B2D72] bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-blue-950/40 via-[#0B2D72] to-[#041944] overflow-y-auto custom-scrollbar h-full w-full">
+    <div className="relative select-none flex-1 flex flex-col bg-[#0B2D72] bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-blue-950/40 via-[#0B2D72] to-[#041944] w-full">
       <div className="absolute top-1/4 left-1/10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none z-0" />
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none z-0" />
 
