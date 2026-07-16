@@ -34,24 +34,19 @@ export default function Connect() {
       setTimeout(() => setStatus("idle"), 5000);
     }
   };
-
   return (
-    <div className="relative select-none flex flex-col sm:h-[93.8vh] overflow-hidden bg-[#0B2D72]">
-      <div className="absolute top-0 right-0 sm:w-32 sm:h-32 w-14 h-14 overflow-hidden bg-black sm:rounded-bl-3xl rounded-bl-xl shadow-xl shadow-black/30 z-10">
-        <div className="absolute top-0 right-0 w-full h-full sm:rounded-tr-3xl rounded-tr-xl bg-white rotate-180 [clip-path:polygon(100%_0,0_0,100%_100%)]" />
-      </div>
-
-      <main className="flex flex-1 flex-col lg:flex-row overflow-hidden">
+    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72] overflow-hidden">
+      <main className="flex flex-1 flex-col lg:flex-row items-center justify-center overflow-hidden w-full px-8 lg:px-16 py-6 gap-8">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex flex-col justify-center px-8 lg:px-16 pt-10 pb-6 lg:py-0 lg:w-2/5"
+          className="flex flex-col justify-center lg:w-1/2 w-full"
         >
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight mb-6">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight mb-6">
             Let's build<br />something<br />together.
           </h1>
-          <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+          <p className="text-white/70 text-base leading-relaxed max-w-sm">
             I'm open to job, freelancing, consulting, and long-term partnerships. <br /> Tell me what you're working on.
           </p>
         </motion.div>
@@ -60,9 +55,9 @@ export default function Connect() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="flex flex-col justify-center flex-1 px-8 lg:px-16 sm:pb-8 pb-3.5 lg:py-0"
+          className="flex flex-col justify-center lg:w-1/2 w-full"
         >
-          <div className="w-full max-w-md mx-auto lg:mx-0 space-y-3.5">
+          <div className="w-full max-w-md mx-auto lg:mx-0 space-y-4">
             <div className="relative group">
               <input
                 type="text"
@@ -70,7 +65,7 @@ export default function Connect() {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
                 required
-                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all text-sm"
+                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-2.5 sm:py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all text-base"
               />
             </div>
             <div>
@@ -80,7 +75,7 @@ export default function Connect() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
-                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all text-sm"
+                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-2.5 sm:py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all text-base"
               />
             </div>
             <div>
@@ -89,15 +84,15 @@ export default function Connect() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell me about your project..."
                 required
-                rows={5}
-                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all resize-none text-sm"
+                rows={4}
+                className="w-full border border-white/10 text-white placeholder:text-white/25 px-5 py-2.5 sm:py-3.5 rounded-xl outline-none focus:border-white/30 focus:bg-white/8 transition-all resize-none text-base"
               />
             </div>
 
             <button
               onClick={handleSubmit}
               disabled={status === "loading"}
-              className="w-full bg-white text-[#0B2D72] font-semibold py-3.5 rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+              className="w-full bg-white text-[#0B2D72] font-semibold py-3.5 rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
               {status === "loading" ? "Sending..." : "Send Message"}
             </button>
@@ -106,7 +101,7 @@ export default function Connect() {
               <motion.p
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-white/70 text-sm pt-1"
+                className="text-center text-white/70 text-base pt-1"
               >
                 Message sent — I'll be in touch soon.
               </motion.p>
@@ -115,7 +110,7 @@ export default function Connect() {
               <motion.p
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-red-400/80 text-sm pt-1"
+                className="text-center text-red-400/80 text-base pt-1"
               >
                 Something went wrong. Try emailing me directly.
               </motion.p>

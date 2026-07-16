@@ -27,10 +27,22 @@ export default function Footer() {
             LinkedIn
           </Link>
           <Link
+            href="/"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
+            Home
+          </Link>
+          <Link
             href="/connect"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
             Connect
+          </Link>
+          <Link
+            href="/projects"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
+            Projects
           </Link>
         </div>
       </div>

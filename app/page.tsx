@@ -3,17 +3,13 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="relative select-none">
-      <div className="absolute top-0 right-0 sm:w-32 sm:h-32 w-14 h-14 overflow-hidden bg-black sm:rounded-bl-3xl rounded-bl-xl shadow-xl shadow-black/30">
-        <div className="absolute top-0 right-0 w-full h-full sm:rounded-tr-3xl rounded-tr-xl bg-white rotate-180 [clip-path:polygon(100%_0,0_0,100%_100%)]">
-        </div>
-      </div>
-      <section className="flex bg-[#0B2D72] flex-col justify-center px-8 lg:px-16 sm:py-20 py-10 w-full">
+    <div className="relative select-none flex-1 flex flex-col justify-center bg-[#0B2D72] overflow-hidden">
+      <section className="flex flex-col justify-center px-8 lg:px-16 w-full py-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-foreground leading-[1.1] tracking-tight mb-8 sm:mb-20"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight mb-6 sm:mb-12"
         >
           Dhruv Ratan Jayaswal
           <br />
@@ -23,7 +19,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-lg space-y-6.5 text-white/60"
+          className="max-w-lg space-y-4 text-white/70"
         >
           <p className="text-base leading-relaxed">
             I'm a full-stack engineer and systems architect building scalable digital ecosystems. From architecting robust cloud infrastructure to weaving Generative AI into high-growth applications, I solve complex problems from the ground up.
@@ -32,13 +28,13 @@ export default function Home() {
             I partner with early-stage startups to deliver high-impact digital products.
           </p>
           <p className="text-base leading-relaxed">
-            I manage projects from initial concept ,system architecture through to deployment and scale, ensuring every line of code serves the business goal.
+            I manage projects from initial concept, system architecture through to deployment and scale, ensuring every line of code serves the business goal.
           </p>
           <p className="text-base leading-relaxed">
             Got a project in mind?
             <br />
-            <a href="mailto:mrdhruv.professional@gmail.com" className="external-link">
-              ping me at <span className="text-white">mrdhruv.professional@gmail.com</span>
+            <a href="mailto:mrdhruv.professional@gmail.com" className="text-white hover:underline transition-all">
+              ping me at <span className="text-white font-semibold">mrdhruv.professional@gmail.com</span>
             </a>
           </p>
         </motion.div>
